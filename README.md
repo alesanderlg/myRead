@@ -24,12 +24,12 @@ To get started developing right away:
     ├── App.css # Styles for your app. Feel free to customize this as you desire.
     ├── App.js # This is the root of your app. Contains static HTML right now.
     ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
-    ├── Dashboard.js # This component show bookshelf from user
-    │   ├── DashBoardTitle.js # This component
-    │   ├── BookShelf.js # This component
-    │   │   ├── BookShelfBooks.js # This component
-    │   │   │   ├── Book.js # This component
-    │   │   │   │   ├── BookShelfChanger.js # This component
+    ├── Dashboard.js # This component shows the bookshelves from the user
+    │   ├── DashBoardTitle.js # This component shows the title of the Dashboard
+    │   ├── BookShelf.js # This component shows the books according to choose from user on each shelf
+    │   │   ├── BookShelfBooks.js # This component shows the book on a specific shelf 
+    │   │   │   ├── Book.js # This component shows each book according to choose from user
+    │   │   │   │   ├── BookShelfChanger.js # This component show the menu to choose a shelf
     ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
     ├── icons # Helpful images for your app. Use at your discretion.
     │   ├── add.svg
