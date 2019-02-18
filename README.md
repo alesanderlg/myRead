@@ -4,7 +4,7 @@ This is the starter template for the final assessment project for Udacity's Reac
 
 Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
 
-## TL;DR
+## Getting Started
 
 To get started developing right away:
 
@@ -23,13 +23,16 @@ To get started developing right away:
 └── src
     ├── App.css # Styles for your app. Feel free to customize this as you desire.
     ├── App.js # This is the root of your app. Contains static HTML right now.
+    │   ├── Dashboard.js # This component contains the bookshelves from the user
+    │   │   ├── DashBoardTitle.js # This component contains the title of the Dashboard
+    │   │   ├── BookShelf.js # This component contains the books according to choose from user on each shelf
+    │   │   │   ├── BookShelfBooks.js # This component contains each book according to choose from user
+    │   │   │   │   ├── Book.js # This component contains the book on a specific shelf
+    │   │   │   │   │   ├── BookDetail.js # This component contains book details
+    │   │   │   │   │   │   ├── SelectBookShelf # This component contains the menu to move a book to a shelf
+    │   ├── SearchBook # This component contains the search to find a book for a particular set of search terms
+    │   │   ├── BookShelfBooks.js # This component contains each book according to choose from user
     ├── App.test.js # Used for testing. Provided with Create React App. Testing is encouraged, but not required.
-    ├── Dashboard.js # This component shows the bookshelves from the user
-    │   ├── DashBoardTitle.js # This component shows the title of the Dashboard
-    │   ├── BookShelf.js # This component shows the books according to choose from user on each shelf
-    │   │   ├── BookShelfBooks.js # This component shows the book on a specific shelf 
-    │   │   │   ├── Book.js # This component shows each book according to choose from user
-    │   │   │   │   ├── BookShelfChanger.js # This component show the menu to choose a shelf
     ├── BooksAPI.js # A JavaScript API for the provided Udacity backend. Instructions for the methods are below.
     ├── icons # Helpful images for your app. Use at your discretion.
     │   ├── add.svg
@@ -96,3 +99,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
 
 For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## Additional comments
+
+## Additional dependencies
