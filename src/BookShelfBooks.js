@@ -1,16 +1,20 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Book from './Book';
+import PropTypes from 'prop-types'
 
-class BookShelfBooks extends Component{
-    render(){
-        const booksOnShelf = this.props.booksOnShelf
-        return(
-            <ol className="books-grid">  
-                {booksOnShelf.map((book) =>(
-                    <Book key={book.id} book={book}/>
-                ))}
-            </ol>
-        )
-    }
+const BookShelfBooks = ({ booksOnShelf, onSelectBookShelf}) =>{
+    return(
+        <ol className="books-grid">  
+            {booksOnShelf.map((book) =>(
+                <Book key={book.id} book={book} onSelectBookShelf={onSelectBookShelf}/>
+            ))}
+        </ol>
+    )
 }
+
+BookShelfBooks.propTypes = {
+    booksOnShelf: PropTypes.array.isRequired,
+    onSelectBookShelf: PropTypes.func.isRequired
+}
+
 export default BookShelfBooks

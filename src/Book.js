@@ -1,27 +1,18 @@
-import React, { Component } from 'react'
-import BookShelfChanger from './BookShelfChanger'
+import React from 'react'
+import BookDetail from './BookDetail'
+import PropTypes from 'prop-types'
 
-class Book extends Component{
-    render(){
-        const book = this.props.book
-        return(
+const Book = ({ book, onSelectBookShelf }) =>{
+    return(
         <li>    
-            <div className="book">
-                <div className="book-top">
-                    <div className="book-cover" 
-                        style={{ 
-                            width: 128, 
-                            height: 193, 
-                            backgroundImage: `url(${book.imageLinks.smallThumbnail})`
-                        }}>
-                    </div>
-                    <BookShelfChanger/>
-                </div>
-                <div className="book-title">{book.title}</div>
-                <div className="book-authors">{book.authors}</div>
-            </div>
+            <BookDetail book={book} onSelectBookShelf={onSelectBookShelf}/>
         </li>
-        )
-    }
+    )
 }
+
+Book.propTypes = {
+    book: PropTypes.object.isRequired,
+    onSelectBookShelf: PropTypes.func.isRequired
+}
+
 export default Book
