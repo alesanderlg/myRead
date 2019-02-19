@@ -35,6 +35,10 @@ class BooksApp extends React.Component {
     BooksAPI.update(book,shelf)
   }
 
+  clearState = () => {
+    this.setState({showingBooks:[]})
+  }
+
   containsShelf = (myBooks, searchBooks) =>{
     for (let bookSearch of searchBooks) {
       for (let myBook of myBooks) {
@@ -47,11 +51,11 @@ class BooksApp extends React.Component {
   }
 
   onSearchBook = query =>{
-    query !== '' ? 
+    query !== "" ? 
     (
       BooksAPI.search(query).then((searchBooks) =>{
           if(!searchBooks || searchBooks.error){
-            this.setState({showingBooks:[]})
+            this.setState({searchBooks:[]})
           }
           else if(Array.isArray(searchBooks)){
             this.setState(() =>({
@@ -61,8 +65,7 @@ class BooksApp extends React.Component {
       })
     ) 
     : 
-    this.setState({showingBooks:[]})
-    console.log('searchBook', this.state.searchBooks)
+    this.setState({searchBooks:[]})
   }
 
   render() {
