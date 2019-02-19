@@ -47,18 +47,21 @@ class BooksApp extends React.Component {
   }
 
   onSearchBook = query =>{
-    console.log('query', query)
-    query !== '' ? (
-    BooksAPI.search(query).then((searchBooks) =>{
-      if(!searchBooks || searchBooks.error){
-        this.setState({showingBooks:[]})
-      }else if(Array.isArray(searchBooks)){
-        this.setState(() =>({
-          searchBooks: this.containsShelf(this.state.myBooks, searchBooks)
-        }))
-      }
-    })
-    ) : this.setState({showingBooks:[]})
+    query !== '' ? 
+    (
+      BooksAPI.search(query).then((searchBooks) =>{
+          if(!searchBooks || searchBooks.error){
+            this.setState({showingBooks:[]})
+          }
+          else if(Array.isArray(searchBooks)){
+            this.setState(() =>({
+              searchBooks: this.containsShelf(this.state.myBooks, searchBooks)
+            }))
+          }
+      })
+    ) 
+    : 
+    this.setState({showingBooks:[]})
     console.log('searchBook', this.state.searchBooks)
   }
 

@@ -30,7 +30,6 @@ class SelectBookShelf extends Component{
 }
 
 SelectBookShelf.propTypes = {
-    shelf: PropTypes.string.isRequired,
     selectBookShelf: PropTypes.func.isRequired
 }
 
