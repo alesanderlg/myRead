@@ -33,8 +33,4 @@ SelectBookShelf.propTypes = {
     selectBookShelf: PropTypes.func.isRequired
 }
 
-SelectBookShelf.defaultProps = {
-    selectValue: 'none'
-}
-
 export default SelectBookShelf
