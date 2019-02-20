@@ -1,3 +1,6 @@
+
+
+
 import React from 'react'
 import * as BooksAPI from './BooksAPI'
 import { Route } from 'react-router-dom'
@@ -21,24 +24,23 @@ class BooksApp extends React.Component {
     });
   }
 
-  componentDidUpdate(){
-    BooksAPI.getAll().then((myBooks) =>{
-      this.setState(() =>({
-        myBooks
-      }))
-    }).catch((err) => {
-      console.error('err', err);
-    });
-  }
-
   changeBookShelf = (book, shelf) => {
     BooksAPI.update(book,shelf)
+      .then(books => BooksAPI.getAll())
+      .then(myBooks => {
+        this.setState(() => ({
+          myBooks
+        }))
+      })
   }
 
-  clearState = () => {
-    this.setState({showingBooks:[]})
-  }
-
+  /**
+ * this function copies the current shelf for each book from my 
+ * dashboard to search book
+ * @param {Array} myBooks - current books on the bookshelf
+ * @param {Array} searchBooks - books from search
+ * 
+ */
   containsShelf = (myBooks, searchBooks) =>{
     for (let bookSearch of searchBooks) {
       for (let myBook of myBooks) {
