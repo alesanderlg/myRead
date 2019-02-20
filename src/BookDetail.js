@@ -1,15 +1,16 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import SelectBookShelf from './SelectBookShelf'
 import PropTypes from 'prop-types'
 
-const BookDetail = ({book, onSelectBookShelf}) =>{
-    
-    const selectBookShelf = (shelf) =>{
-        onSelectBookShelf(book, shelf)
-    }
+class BookDetail extends PureComponent{
 
-    return(
-        <div className="book">
+    render(){
+        const { book, onSelectBookShelf } = this.props
+        const selectBookShelf = (shelf) =>{
+            onSelectBookShelf(book, shelf)
+        }
+        return(
+            <div className="book">
             <div className="book-top">
                 <div className="book-cover" 
                     style={{ 
@@ -23,7 +24,9 @@ const BookDetail = ({book, onSelectBookShelf}) =>{
             <div className="book-title">{book.title}</div>
             <div className="book-authors">{book.authors}</div>
         </div>
-    )
+
+        )
+    }
 }
 
 BookDetail.propType = {
