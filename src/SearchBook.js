@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import BookShelfBooks from './BookShelfBooks'
 import PropTypes from 'prop-types'
+import { DebounceInput } from 'react-debounce-input';
 
 class SearchBook extends Component{
 
@@ -27,12 +28,12 @@ class SearchBook extends Component{
                         to='/'
                     >Close</Link>
                     <div className="search-books-input-wrapper">
-                        <input 
-                            type="text" 
-                            placeholder="Search by title or author"
-                            value={query}
-                            onChange={(event) => this.updateQuery(event.target.value)}
-                        />
+                    <DebounceInput
+                        value={query}
+                        minLength={2}
+                        placeholder="Search by title or author"
+                        debounceTimeout={300}
+                        onChange={(event) => this.updateQuery(event.target.value)} />
                     </div>
                 </div>
                 <div className="search-books-results">
